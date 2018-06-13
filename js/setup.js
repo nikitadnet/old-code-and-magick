@@ -23,17 +23,18 @@ showElements(userDialog);
 showElements(setupSimilar);
 
 var getWizzardArray = function (names, surnames, coatColors, eyesColors) {
-  var wizzards = [];
+  var wizzardsList = [];
   var wizzard = {};
-  for (var i = 1; i <= 4; i++) {
+  var MAX_WIZZARDS = 4;
+  for (var i = 1; i <= MAX_WIZZARDS; i++) {
     wizzard = {
       name: names[getRandomValue(names)] + ' ' + surnames[getRandomValue(surnames)],
       coatColor: coatColors[getRandomValue(coatColors)],
       eyesColor: eyesColors[getRandomValue(eyesColors)]
     };
-    wizzards.push(wizzard);
+    wizzardsList.push(wizzard);
   }
-  return wizzards;
+  return wizzardsList;
 };
 
 wizzards = getWizzardArray(namesArray, surnamesArray, coatColorArray, eyesColorArray);
